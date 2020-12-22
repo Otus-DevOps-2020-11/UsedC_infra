@@ -15,6 +15,5 @@ Host someinternalhost
     IdentityFile ~/.ssh/appuser
     ForwardAgent yes
 
-Конфигурация для подключения:
 bastion_IP = 130.193.38.79
 someinternalhost_IP = 10.130.0.26
