@@ -1,6 +1,8 @@
 # UsedC_infra
 UsedC Infra repository
 
+Добавлен файл-шаблон для packer. Был создан образ по шаблону, а также ВМ по этому образу.
+
 Для подключения к someinternalhost в одну команду можно воспользоваться пробросом портов:
 ssh -i ~/.ssh/appuser -f -N -A -L [порт локалхоста]:[внутренний IP someinternalhost]:22 appuser@[Внешний IP BastionHost]
 
