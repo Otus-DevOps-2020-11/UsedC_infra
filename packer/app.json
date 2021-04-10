@@ -1,0 +1,34 @@
+{
+    "variables": {
+            "folder_id_var": "",
+            "source_image_family_var": "",
+            "service_account_key_file_var": "",
+            "serial_log_file_var": "",
+            "disk_name_var": "",
+            "use_ipv6_var": "",
+    },
+
+    "builders": [
+        {
+            "type": "yandex",
+            "service_account_key_file": "{{user `service_account_key_file_var`}}",
+            "folder_id": "{{user `folder_id_var"`}}",
+            "source_image_family": "{{user `source_image_family_var`}}",
+            "image_name": "reddit-base-{{timestamp}}",
+            "image_family": "reddit-base",
+            "ssh_username": "ubuntu",
+            "platform_id": "standard-v1",
+            "use_ipv4_nat": "true",
+            "serial_log_file": "{{user `serial_log_file_var`}}",
+            "disk_name": "{{user `disk_name_var`}}",
+            "use_ipv6": "{{user `use_ipv6_var`}}"
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "script": "/Users/damitrofanov/Desktop/UsedC_infra/packer/scripts/install_ruby.sh",
+            "execute_command": "sudo {{.Path}}"
+        }
+    ]
+}
